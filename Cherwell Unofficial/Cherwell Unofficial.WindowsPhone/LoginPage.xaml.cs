@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Trebuchet.API;
+//using Trebuchet.API;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -27,8 +27,6 @@ namespace Cherwell_Unofficial
         public LoginPage()
         {
             this.InitializeComponent();
-
-            Color accentColor = (Color)Application.Current.Resources["PhoneAccentColor"];
 
             //if we have username and password info then login automatically, otherwise fill in last username
         }
@@ -55,6 +53,12 @@ namespace Cherwell_Unofficial
             {
                 //todo delete any saved password info so we stop logging in automatically
             }
+        }
+
+        private async void server_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var serverDialog = new ServerSelectionDialog();
+            await serverDialog.ShowAsync();  
         }
     }
 }

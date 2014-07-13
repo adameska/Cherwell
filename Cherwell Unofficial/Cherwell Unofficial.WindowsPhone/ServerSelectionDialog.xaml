@@ -1,0 +1,30 @@
+﻿<ContentDialog
+    x:Class="Cherwell_Unofficial.ServerSelectionDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Cherwell_Unofficial"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Select a Connection"
+    Foreground="{StaticResource PhoneAccentBrush}"
+    Background="#161D1F"
+    PrimaryButtonText="Save"  
+    SecondaryButtonText="Cancel"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+
+    <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <ComboBox Name="server" Header="Server"/>
+        <TextBox  Name="url" Header="Server Url"/>
+        <Button Name="addConnection" Content="Add New" Click="addConnection_Click"/>
+
+        <!-- Content body -->
+        <TextBlock Name="body" Style="{StaticResource MessageDialogContentStyle}" TextWrapping="Wrap">
+            <TextBlock.Text>
+                Enter the Url of the server you wish to connect
+                to. Give it a name for future reference.
+            </TextBlock.Text>
+        </TextBlock>
+    </StackPanel>
+</ContentDialog>

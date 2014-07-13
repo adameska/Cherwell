@@ -12,13 +12,15 @@
         <StackPanel VerticalAlignment="Stretch" 
                     HorizontalAlignment="Stretch"
                     Margin="20,20,20,20">
-            <TextBlock FontSize="36" Foreground="{StaticResource PhoneAccentBrush}">
-                
+            <TextBlock FontSize="36" Foreground="{StaticResource PhoneAccentBrush}">        
                 Cherwell Login
             </TextBlock>
             <StackPanel Margin="10, 20, 10, 10">
+                <TextBox Name="server"
+                         Header="Server" Tapped="server_Tapped"/>
+                
                 <TextBox Name="username" 
-                     Header="Username (including domain)"/>
+                         Header="Username (including domain)"/>
                 <PasswordBox  Name="password" Header="Password"/>
                 <CheckBox Name="loginAutomatically" Content="Login Automatically"/>
 
