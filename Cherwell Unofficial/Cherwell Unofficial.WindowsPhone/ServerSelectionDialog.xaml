@@ -15,7 +15,7 @@
     SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
 
     <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-        <ComboBox Name="server" Header="Server"/>
+        <ComboBox Name="server" Header="Connection Name"/>
         <TextBox  Name="url" Header="Server Url"/>
         <Button Name="addConnection" Content="Add New" Click="addConnection_Click"/>
 

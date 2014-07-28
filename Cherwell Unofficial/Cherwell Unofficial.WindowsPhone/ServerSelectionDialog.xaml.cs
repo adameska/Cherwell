@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage.Pickers.Provider;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -23,6 +24,9 @@ namespace Cherwell_Unofficial
         public ServerSelectionDialog()
         {
             this.InitializeComponent();
+
+            //Load up any servers that exist
+            
         }
 
         /// <summary>
@@ -30,7 +34,7 @@ namespace Cherwell_Unofficial
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+        private async void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
             if(url.Text.Length > 3)
             {
@@ -39,6 +43,8 @@ namespace Cherwell_Unofficial
             else
             {
                 //display popup of bad url
+                var badUrlDialg = new MessageDialog("Invalid Url Entered");
+                await badUrlDialg.ShowAsync();
             }
         }
 
